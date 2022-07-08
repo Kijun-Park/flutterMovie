@@ -76,30 +76,22 @@ class MovieSearch extends StatelessWidget {
 
   Widget _buildMovie(Movie movie) {
     return Container(
-      padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
+        width: 150,
         child: Center(
             child: Column(
-      children: [
-        Image.network(
-          'https://image.tmdb.org/t/p/w500/${movie.posterPath}', width: 100,
-        ),
-        Text(
-          renderTitleText(movie.originalTitle)
-        ),
-      ],
-    )));
-    // return ListTile(
-    //   title: Text(movie.originalTitle),
-    //   subtitle: Text(movie.releaseDate),
-    //   leading: Image.network(
-    //     'https://image.tmdb.org/t/p/w500/${movie.posterPath}',
-    //   ),
-    // );
+          children: [
+            Image.network(
+              'https://image.tmdb.org/t/p/w500/${movie.posterPath}',
+            ),
+            Text(movie.originalTitle),
+          ],
+        )));
   }
 
   String renderTitleText(String title) {
-    if(title.length > 10) {
-      title = title.substring(0,10);
+    if (title.length > 10) {
+      title = title.substring(0, 10);
       title = title + "...";
     }
     return title;
